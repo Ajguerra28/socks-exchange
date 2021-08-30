@@ -15,7 +15,26 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :location,
+                required: true %>
+    <%= f.input :gender,
+                collection: %w[male female],
+                required: true,
+                input_html: { autocomplete: "new-gender" } %>
+    <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: "new-name" } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "new-phone-number" } %>
+    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: true,
+                              order: [:month, :year] %>
+    <%# <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "new-phone-number" } %>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
