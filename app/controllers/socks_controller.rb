@@ -3,7 +3,11 @@ class SocksController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @socks = Sock.all
+    if params[:type_of_socks]
+      @socks = Sock.where(type_of_socks: params[:type_of_socks])
+    else
+      @socks = Sock.all
+    end
   end
 
   def show
