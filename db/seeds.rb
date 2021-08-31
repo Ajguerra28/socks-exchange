@@ -10,7 +10,7 @@ puts "..."
 puts "Creating some more users..."
 
 10.times do
-  User.create(
+  User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.safe_email,
     password: Faker::Blockchain::Bitcoin.address.first(10),
@@ -24,15 +24,17 @@ end
 puts "All users have been created. Thanks!"
 # ------------------- CHANGE DATABASE ------------------- #
 puts "Creating some amazin socks..."
+users = User.all
 Sock.destroy_all
 
 10.times do
-  Sock.create(
+  Sock.create!(
     type_of_socks: ['Knee high socks', 'Calf socks', 'Ankle socks'].sample,
     price: %w[3,99$ 4,99$ 9,99$ 14,99$ 19,99$].sample,
     size: %w[36 37 38 39 40 41 42 43 44].sample,
     color: Faker::Color.color_name,
-    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4)
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    owner: users.sample
   )
 end
 
