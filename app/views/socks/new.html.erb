@@ -1,0 +1,29 @@
+<h2>New Sock</h2>
+
+<%= simple_form_for @sock do |f| %>
+  <div class="form-inputs">
+    <%= f.input :description,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "Type" } %>
+    <%= f.input :type_of_socks,
+                collection: ['Knee high socks', 'Calf socks', 'Ankle socks'],
+                required: true,
+                input_html: { autocomplete: "Type" } %>
+    <%= f.input :price,
+                required: true,
+                input_html: { autocomplete: "Price" } %>
+    <%= f.input :size,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Type" } %>
+    <%= f.input :color,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Type" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create Sock" %>
+  </div>
+<% end %>
