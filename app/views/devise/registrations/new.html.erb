@@ -15,24 +15,24 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: "new-name" } %>
     <%= f.input :location,
                 required: true %>
     <%= f.input :gender,
                 collection: %w[male female],
                 required: true,
                 input_html: { autocomplete: "new-gender" } %>
-    <%= f.input :name,
-                required: true,
-                input_html: { autocomplete: "new-name" } %>
     <%= f.input :phone_number,
                 required: true,
                 input_html: { autocomplete: "new-phone-number" } %>
-    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, discard_day: true,
-                              order: [:month, :year] %>
-    <%# <%= f.input :phone_number,
+    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 25,
+                                end_year: Date.today.year - 1, discard_day: false,
+                                order: [:day, :month, :year] %>
+    <%= f.input :avatar, as: :file,
                 required: true,
-                input_html: { autocomplete: "new-phone-number" } %>
+                input_html: { autocomplete: "new_avatar "} %>
   </div>
 
 
