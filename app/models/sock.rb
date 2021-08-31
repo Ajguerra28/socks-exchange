@@ -4,4 +4,10 @@ class Sock < ApplicationRecord
   has_one_attached :photo
 
   validates :type_of_socks, :price, :size, :color, :description, presence: true
+
+  enum status: {
+    active: 0,
+    pending: 1,
+    unavailable: 2
+  }
 end
