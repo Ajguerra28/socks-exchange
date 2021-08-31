@@ -20,7 +20,7 @@
 }
 .searchbar{
   margin-bottom: auto;
-  // margin-top: auto;
+  // margin-top: auto ;
   height: 60px;
   background-color: rgba($color: #f9f9f9, $alpha: 0.7);
   border-radius: 30px;
@@ -61,4 +61,10 @@ h2 {
 }
 body {
   background: whitesmoke;
+}
+
+.typed-js {
+  min-height: 33.6px;
+  font-family: Nunito;
+  font-size: 18px;
 }

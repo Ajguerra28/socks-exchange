@@ -1,8 +1,16 @@
 <h1>List of Socks</h1>
-<ul>
-  <div><% @socks.each do |sock| %>
-    <li><%= sock.description %></li>
-    <li><%= sock.price %> $</li>
-    <li><%= sock.type_of_socks %></li>
-  <% end  %></div>
-</ul>
+
+<div class="row">
+  <% @socks.each do |sock| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body d-flex">
+            <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
+            <%= sock.description %>
+            <%= sock.price %>
+            <%= sock.type_of_socks %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
