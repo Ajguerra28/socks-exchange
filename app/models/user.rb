@@ -8,6 +8,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, :location, :gender, :date_of_birth, :phone_number, presence: true
-  validates :gender, inclusion: { in: %w[male female] }
+  validates :name, presence: true
 end

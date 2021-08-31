@@ -4,6 +4,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: "new-name" } %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,29 +18,11 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :name,
-                required: true,
-                input_html: { autocomplete: "new-name" } %>
-    <%= f.input :location,
-                required: true %>
-    <%= f.input :gender,
-                collection: %w[male female],
-                required: true,
-                input_html: { autocomplete: "new-gender" } %>
-    <%= f.input :phone_number,
-                required: true,
-                input_html: { autocomplete: "new-phone-number" } %>
-    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 25,
-                                end_year: Date.today.year - 1, discard_day: false,
-                                order: [:day, :month, :year] %>
-    <%= f.input :avatar, as: :file,
-                required: true,
-                input_html: { autocomplete: "new_avatar "} %>
   </div>
 
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: 'btn btn-primary'%>
   </div>
 <% end %>
 
