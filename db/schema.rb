@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_153910) do
+ActiveRecord::Schema.define(version: 2021_08_31_111113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_153910) do
   end
 
   create_table "socks", force: :cascade do |t|
-    t.string "type"
+    t.string "type_of_socks"
     t.float "price"
     t.string "size"
     t.string "color"

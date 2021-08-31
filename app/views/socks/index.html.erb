@@ -1,0 +1,6 @@
+<h1>List of Socks</h1>
+<ul>
+  <% @socks.each do |sock| %>
+    <li><%= sock_to sock.description %></li>
+  <% end  %>
+</ul>
