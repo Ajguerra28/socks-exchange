@@ -2,21 +2,12 @@
 
 <div class="row m-3" >
   <% @socks.each do |sock| %>
-
-<div class="card-product m-3">
-  <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
-  <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-  <div class="card-product-infos">
-    <h2><%= sock.price %> $</h2>
-    <p><%= sock.description.first(25) %>...</p>
-  </div>
-</div>
-            <%#= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
-            <%#= sock.description %>
-            <%#= sock.price %>
-            <%#= sock.type_of_socks %>
-          <%# </div>
-        </div> %>
+    <div class="card-product m-3">
+      <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
+      <div class="card-product-infos">
+        <h2><%= sock.price %> $</h2>
+        <p><%= sock.description.first(50) %>...</p>
+      </div>
+    </div>
   <% end %>
-</div>
 </div>
