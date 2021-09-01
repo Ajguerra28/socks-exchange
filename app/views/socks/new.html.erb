@@ -1,31 +1,33 @@
-<h2>New Sock</h2>
+<div class="main-container-sock m-3">
+  <h2>List your smelly socks in here!</h2>
 
-<%= simple_form_for @sock do |f| %>
-  <div class="form-inputs">
-    <%= f.input :description,
-                required: true,
-                input_html: { autocomplete: "Type" } %>
-    <%= f.input :type_of_socks,
-                collection: ['Knee high socks', 'Calf socks', 'Ankle socks'],
-                required: true,
-                input_html: { autocomplete: "Type" } %>
-    <%= f.input :price,
-                required: true,
-                input_html: { autocomplete: "Price" } %>
-    <%= f.input :size,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Type" } %>
-    <%= f.input :color,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Type" } %>
-    <%= f.input :photo, as: :file,
-                required: true,
-                input_html: { autocomplete: "Photo" } %>
-  </div>
+  <%= simple_form_for @sock do |f| %>
+    <div class="form-inputs">
+      <%= f.input :description,
+                  required: true,
+                  input_html: { autocomplete: "Type" } %>
+      <%= f.input :type_of_socks,
+                  collection: ['Knee high socks', 'Calf socks', 'Ankle socks'],
+                  required: true,
+                  input_html: { autocomplete: "Type" } %>
+      <%= f.input :price,
+                  required: true,
+                  input_html: { autocomplete: "Price" } %>
+      <%= f.input :size,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Type" } %>
+      <%= f.input :color,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Type" } %>
+      <%= f.input :photo, as: :file,
+                  required: true,
+                  input_html: { autocomplete: "Photo" } %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Create Sock" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Create Sock" %>
+    </div>
+  <% end %>
+</div>
