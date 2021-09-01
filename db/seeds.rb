@@ -22,7 +22,7 @@ puts "Creating some more users..."
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
   )
   user.avatar.attach(
-    io: File.open(Rails.root.join("app/assets/images/ava#{rand(1..6)}.jpg")),
+    io: File.open(Rails.root.join("app/assets/images/ava#{rand(1..11)}.jpg")),
     filename: 'sock.jpg'
     )
 end
@@ -42,7 +42,7 @@ users = User.all
     owner: users.sample
   )
   sock.photo.attach(
-    io: File.open(Rails.root.join("app/assets/images/sock#{rand(1..12)}.jpg")),
+    io: File.open(Rails.root.join("app/assets/images/sock#{rand(1..11)}.jpg")),
     filename: 'sock.jpg'
   )
 end

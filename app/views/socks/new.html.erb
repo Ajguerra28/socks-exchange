@@ -16,18 +16,18 @@
       <%= f.input :size,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "Type" } %>
+                  input_html: { autocomplete: "Size" } %>
       <%= f.input :color,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "Type" } %>
+                  input_html: { autocomplete: "Color" } %>
       <%= f.input :photo, as: :file,
                   required: true,
                   input_html: { autocomplete: "Photo" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Create Sock" %>
+      <%= f.button :submit, "Create Sock", class:'btn btn-primary' %>
     </div>
   <% end %>
 </div>
