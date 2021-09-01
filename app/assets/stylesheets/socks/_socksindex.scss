@@ -2,7 +2,7 @@
 .card-img-top{
   // border: 1px solid;
   border-radius: 4px;
-}
+};
 
 .sock-title-show {
   color: black;
@@ -11,20 +11,13 @@
   font-family: Nunito;
   font-weight: bold;
   margin: 14px 14px 14px 0px;
-}
+};
 
-.sock-para-show{
-  color: black;
-  font-size: 15px;
-  text-align: left;
-  margin: 14px;
-}
-
-.card-profile{
-  text-align: left;
+.profilecard{
+  border-radius: 4px;
   border: 2px solid;
-  padding: 30px;
-  background-color: aliceblue;
-  border-radius: 8px;
-  height: 120px;
-}
+};
+
+.profilecard > h2, p{
+  margin: 10px;
+};
