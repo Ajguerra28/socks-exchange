@@ -1,22 +1,13 @@
-<h1>List of Socks</h1>
+<h1 class="d-flex justify-content-center my-4">List of Socks</h1>
 
-<div class="row m-3" >
+<div class="row d-flex justify-content-center" >
   <% @socks.each do |sock| %>
-
-<div class="card-product m-3">
-  <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
-  <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-  <div class="card-product-infos">
-    <h2><%= sock.price %> $</h2>
-    <p><%= sock.description.first(25) %>...</p>
-  </div>
-</div>
-            <%#= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
-            <%#= sock.description %>
-            <%#= sock.price %>
-            <%#= sock.type_of_socks %>
-          <%# </div>
-        </div> %>
+    <div class="card-product my-3 mx-5">
+      <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
+      <div class="card-product-infos">
+        <h2><%= sock.price %> $</h2>
+        <p><%= sock.description.first(50) %>...</p>
+      </div>
+    </div>
   <% end %>
-</div>
 </div>
