@@ -21,9 +21,9 @@ puts "Creating some more users..."
     gender: %w[male female].sample,
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
   )
-    user.avatar.attach(
-    io: File.open(Rails.root.join("app/assets/images/sock#{rand(1..12)}.jpg")),
-    filename: 'user.jpg'
+  user.avatar.attach(
+    io: File.open(Rails.root.join("app/assets/images/ava#{rand(1..6)}.jpg")),
+    filename: 'sock.jpg'
     )
 end
 
