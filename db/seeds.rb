@@ -37,7 +37,7 @@ Sock.destroy_all
     owner: users.sample
   )
   sock.photo.attach(
-    io: File.open(Rails.root.join(`app/assets/images/sock#{rand(1..12)}.jpg`)),
+    io: File.open(Rails.root.join("app/assets/images/sock#{rand(1..12)}.jpg")),
     filename: 'sock.jpg'
   )
 end
