@@ -1,5 +1,27 @@
-<h2><%= @sock.description %></h2>
-<p><%= @sock.type_of_socks %></p>
-<p><%= @sock.price %></p>
-<%= cl_image_tag(@sock.photo.key  ,
-      width: 400, height: 300, crop: :fill) %>
+<div class= "container mt-4">
+  <div class= "row">
+    <div class= "col-6">
+      <img class="card-img-top" src="http://cdn.shopify.com/s/files/1/0269/4456/9415/products/ZL2P3986_on_human_grande.jpg?v=1576565407" alt="Card image cap">
+    </div>
+
+
+    <div class="col-6">
+      <h2 class="sock-title-show">Description:</h2>
+      <p><%= @sock.description %>
+      <h2 class="sock-title-show">Type:</h2>
+      <p><%= @sock.type_of_socks %></p>
+      <h2 class="sock-title-show">Price:</h2>
+      <p><%= @sock.price %> €</p>
+    </div>
+
+    <%# <div class = "card-profile">
+      <h2>Profile</h1>
+      <li> %>
+        <%# <ul>= @sock.owner.avatar</ul> %>
+        <%# <ul>= @sock.owner.name</ul> %>
+      <%# </li>
+    </div> %>
+  </div>
+
+  </div>
+</div>
