@@ -1,4 +1,6 @@
 puts "Creating the Three Musketeers..."
+Booking.destroy_all
+Sock.destroy_all
 User.destroy_all
 
 User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961')
@@ -25,7 +27,6 @@ puts "All users have been created. Thanks!"
 # ------------------- CHANGE DATABASE ------------------- #
 puts "Creating some amazin socks..."
 users = User.all
-Sock.destroy_all
 
 10.times do
   sock = Sock.create!(
