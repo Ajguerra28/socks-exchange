@@ -12,7 +12,7 @@ puts "..."
 puts "Creating some more users..."
 
 10.times do
-  User.create!(
+  user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.safe_email,
     password: Faker::Blockchain::Bitcoin.address.first(10),
@@ -21,6 +21,10 @@ puts "Creating some more users..."
     gender: %w[male female].sample,
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
   )
+    user.avatar.attach(
+    io: File.open(Rails.root.join("app/assets/images/sock#{rand(1..12)}.jpg")),
+    filename: 'user.jpg'
+    )
 end
 
 puts "All users have been created. Thanks!"
