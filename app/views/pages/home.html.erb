@@ -6,8 +6,16 @@
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
       <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Search for a sock...">
-        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        <%= form_tag socks_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search_input",
+          placeholder: "Search for a sock..."
+        %>
+        <%= button_tag type: 'submit', class:"search_icon" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
       </div>
     </div>
   </div>
@@ -55,7 +63,9 @@
                 <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
                     <div class="col-md-4">
                         <div class="card card-body">
+                          <%= link_to sock_path(sock) do %>
                             <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %>
+                          <% end %>
                         </div>
                     </div>
                 </div>

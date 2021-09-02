@@ -45,9 +45,12 @@
 .search_icon {
   justify-content: center;
   margin: 9px;
+  border: 0;
+  background: none;
+  color: #167ffb;
 }
 
-.searchbar:hover > .search_input{
+.searchbar:hover .search_input{
   padding: 0 10px;
   width: 450px;
   caret-color:red;

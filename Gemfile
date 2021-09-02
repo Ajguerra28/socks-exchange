@@ -11,6 +11,12 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'cloudinary', '~> 1.16.0'
 
+gem 'pg_search', '~> 2.3.0'
+
+# gem 'elasticsearch', "< 7.14"
+
+# gem 'searchkick', '~> 4.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
