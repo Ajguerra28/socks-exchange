@@ -3,9 +3,24 @@ Booking.destroy_all
 Sock.destroy_all
 User.destroy_all
 
-User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961')
-User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Lisbon', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678')
-User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Japan', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634')
+antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961')
+david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Lisbon', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678')
+mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Japan', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634')
+
+antonio.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/ava6.jpg")),
+  filename: 'antonio.jpg'
+)
+
+david.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/ava2.jpg")),
+  filename: 'david.jpg'
+)
+
+mariana.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/ava5.jpg")),
+  filename: 'mariana.jpg'
+)
 
 puts "Hello António, David and Mariana!"
 puts "..."
@@ -35,7 +50,7 @@ users = User.all
 10.times do
   sock = Sock.create!(
     type_of_socks: ['Knee high socks', 'Calf socks', 'Ankle socks'].sample,
-    price: %w[3,99$ 4,99$ 9,99$ 14,99$ 19,99$].sample,
+    price: %w[3.99 4.99 9.99 14.99 19.99].sample,
     size: %w[36 37 38 39 40 41 42 43 44].sample,
     color: Faker::Color.color_name,
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
