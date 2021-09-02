@@ -1,10 +1,12 @@
 class SocksController < ApplicationController
-
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:type_of_socks]
       @socks = Sock.where(type_of_socks: params[:type_of_socks])
+    elsif params[:query].present?
+      sql_query = "color ILIKE :query OR type_of_socks ILIKE :query"
+      @socks = Sock.where(sql_query, query: "%#{params[:query]}%")
     else
       @socks = Sock.all
     end

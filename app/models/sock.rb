@@ -1,4 +1,5 @@
 class Sock < ApplicationRecord
+
   has_many :bookings
   belongs_to :owner, class_name: "User"
   has_one_attached :photo
@@ -10,4 +11,9 @@ class Sock < ApplicationRecord
     pending: 1,
     unavailable: 2
   }
+
+  # pgsearch gem
+
+  include PgSearch::Model
+  pg_search_scope :search_by_color_and_type_of_sock, against: %i[color type_of_socks], using: { tsearch: { prefix: true } }
 end
