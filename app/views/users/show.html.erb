@@ -1,9 +1,26 @@
-<h1>profile page</h1>
-
 <div>
-  <p><%= cl_image_tag(@user.avatar.key, width: 200, height: 200, crop: :fill) %></p>
-  <p>Name: <%= @user.name %></p>
-  <p>Location: <%= @user.location %></p>
-  <p>Gender: <%= @user.gender %></p>
-  <p>Date of birth: <%= @user.date_of_birth %></p>
+  <h1>profile page</h1>
+
+  <div>
+    <p><%= cl_image_tag(@user.avatar.key, width: 200, height: 200, crop: :fill) %></p>
+    <p>Name: <%= @user.name %></p>
+    <p>Location: <%= @user.location %></p>
+    <p>Gender: <%= @user.gender %></p>
+    <p>Date of birth: <%= @user.date_of_birth %></p>
+  </div>
+
+  <h1>Products</h1>
+
+  <div class="card-product">
+    <% @socks.each do |sock| %>
+      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+      <div class="card-product-infos">
+        <p><%= sock.type_of_socks %></p>
+        <p><%= sock.description %></p>
+        <p><%= sock.price%></p>
+        <p><%= sock.color %></p>
+        <p><%= sock.size %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
