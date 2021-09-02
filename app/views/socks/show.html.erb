@@ -16,7 +16,7 @@
       <p><%= @sock.price %> €</p>
 
 
-      <div class= "d-flex profilecard w-50">
+      <div class= "d-flex profilecard w-50 p-2">
         <%= cl_image_tag(@sock.owner.avatar.key, width: 80, height: 80, crop: :fill) %>
         <p><%= @sock.owner.name %></p>
       </div>
