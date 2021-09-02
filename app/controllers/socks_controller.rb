@@ -14,7 +14,7 @@ class SocksController < ApplicationController
 
   def show
     @sock = Sock.find(params[:id])
-    # @user = User.where(owner: params[:owner])
+    @booking = Booking.new
   end
 
   def new

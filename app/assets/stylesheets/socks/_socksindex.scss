@@ -2,7 +2,7 @@
 .card-img-top{
   // border: 1px solid;
   border-radius: 4px;
-};
+}
 
 .sock-title-show {
   color: black;
@@ -11,17 +11,25 @@
   font-family: Nunito;
   font-weight: bold;
   margin: 14px 14px 14px 0px;
-};
+}
 
 .profilecard{
   border-radius: 4px;
   border: 1px solid;
   background-color: white;
-};
+}
+
+.d-flex .btn {
+  margin-left: 127px;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+}
 
 .profilecard > h2, p{
   margin: 10px;
-};
+}
 
 .profilecard:hover{
   opacity: 0.6;
@@ -29,4 +37,4 @@
 
 .profileConteiner {
   display: inline-block;
-};
+}

@@ -50,7 +50,7 @@ users = User.all
 10.times do
   sock = Sock.create!(
     type_of_socks: ['Knee high socks', 'Calf socks', 'Ankle socks'].sample,
-    price: %w[3,99$ 4,99$ 9,99$ 14,99$ 19,99$].sample,
+    price: %w[3.99 4.99 9.99 14.99 19.99].sample,
     size: %w[36 37 38 39 40 41 42 43 44].sample,
     color: Faker::Color.color_name,
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
