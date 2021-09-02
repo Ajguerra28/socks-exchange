@@ -24,7 +24,6 @@
       <h2 class="sock-title-show">Price:</h2>
       <div class="d-flex">
         <p><%= @sock.price %> €</p>
-        <%# <%= link_to new_sock_booking_path %>
         <%= simple_form_for [@sock, @booking] do |f| %>
           <%= f.submit 'Buy now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
         <% end %>

@@ -39,7 +39,7 @@ puts "Creating some more users..."
   user.avatar.attach(
     io: File.open(Rails.root.join("app/assets/images/ava#{rand(1..11)}.jpg")),
     filename: 'sock.jpg'
-    )
+  )
 end
 
 puts "All users have been created. Thanks!"
@@ -54,6 +54,7 @@ users = User.all
     size: %w[36 37 38 39 40 41 42 43 44].sample,
     color: Faker::Color.color_name,
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    quantity: %w[1 2 3 4 5 6 7].sample,
     owner: users.sample
   )
   sock.photo.attach(
