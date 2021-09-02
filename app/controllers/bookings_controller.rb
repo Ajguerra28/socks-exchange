@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to sock_path(@sock)#, booked: true)#, notice: 'Great! You just bought an amazing pair of socks!'
+      redirect_to sock_path(@sock, booked: true)#, notice: 'Great! You just bought an amazing pair of socks!'
     else
       render '/socks/show'
     end
