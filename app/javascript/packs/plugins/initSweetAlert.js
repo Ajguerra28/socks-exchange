@@ -9,7 +9,7 @@ const initSweetalert = (selector, options = {}) => {
       // swal(options);
       Swal.fire({
         title: "Do you wanna buy this sock?",
-        text: "This is one amazing sock!",
+        text: `There are just  left`,
         icon: "question",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
