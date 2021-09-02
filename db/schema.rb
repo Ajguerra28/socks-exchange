@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_151201) do
+ActiveRecord::Schema.define(version: 2021_09_02_221408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_151201) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "owner_id"
     t.integer "status", default: 0
+    t.integer "quantity"
     t.index ["owner_id"], name: "index_socks_on_owner_id"
   end
 
