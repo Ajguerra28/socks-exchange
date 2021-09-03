@@ -13,7 +13,7 @@
       <%= cl_image_tag(@sock.photo.key, width: 400, height: 400, crop: :fill) %>
     </div>
 
-    <div class="col-6 sock-booking-form" data-quantity="<%= @sock.quantity %>">
+    <div class="col-6">
       <h2 class="sock-title-show">Description:</h2>
       <p><%= @sock.description %>
       <h2 class="sock-title-show">Type:</h2>

@@ -3,9 +3,9 @@ Booking.destroy_all
 Sock.destroy_all
 User.destroy_all
 
-antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961')
-david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Lisbon', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678')
-mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Japan', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634')
+antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961')
+david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678')
+mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634')
 
 antonio.avatar.attach(
   io: File.open(Rails.root.join("app/assets/images/ava6.jpg")),
@@ -26,15 +26,15 @@ puts "Hello António, David and Mariana!"
 puts "..."
 puts "Creating some more users..."
 
-# location = []
-# counter = 0
+locations = ["Rua Condo Redondo Nº117","Rua Manuel Arriaga Nº8","R. Prof. Hernâni Cidade","Av. da Liberdade","Rua Dom João V","Via Futebol Clube do Porto","R. Dom Tomás de Almeida 61","Via Circular do Montijo","R. Pedro Álvares Cabral 42", "Av. do Uruguai 36"]
+counter = 0
 
 10.times do
   user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.safe_email,
     password: Faker::Blockchain::Bitcoin.address.first(10),
-    location: Faker::Address.full_address,
+    location: locations[counter],
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
     gender: %w[male female].sample,
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
@@ -44,7 +44,7 @@ puts "Creating some more users..."
     io: File.open(Rails.root.join("app/assets/images/ava#{rand(1..11)}.jpg")),
     filename: 'sock.jpg'
   )
-  # counter += 1
+  counter += 1
 end
 
 puts "All users have been created. Thanks!"
