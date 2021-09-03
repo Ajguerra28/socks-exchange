@@ -12,7 +12,6 @@
     <div class= "col-6">
       <%= cl_image_tag(@sock.photo.key, width: 400, height: 400, crop: :fill) %>
     </div>
-
     <div class="col-6 sock-booking-form" data-quantity="<%= @sock.quantity %>">
       <h2 class="sock-title-show">Description:</h2>
       <p><%= @sock.description %>
@@ -22,9 +21,11 @@
       <div class="d-flex">
         <p><%= @sock.price %> €</p>
         <p id="quantity"><%= @sock.quantity %> socks left</p>
-        <% if policy(@booking).create? %>
-          <%= simple_form_for [@sock, @booking] do |f| %>
-            <%= f.submit 'Buy now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+        <% if @sock.owner != current_user %>
+          <% if policy(@booking).create? %>
+            <%= simple_form_for [@sock, @booking] do |f| %>
+              <%= f.submit 'Buy now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
