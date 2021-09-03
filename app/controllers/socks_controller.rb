@@ -34,7 +34,7 @@ class SocksController < ApplicationController
     @sock.owner = current_user
     authorize @sock
     if @sock.save
-      redirect_to sock_path(@sock)
+      redirect_to user_path(@sock.owner)
     else
       render :new
     end
