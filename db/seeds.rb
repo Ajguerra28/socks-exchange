@@ -26,6 +26,9 @@ puts "Hello António, David and Mariana!"
 puts "..."
 puts "Creating some more users..."
 
+# location = []
+# counter = 0
+
 10.times do
   user = User.create!(
     name: Faker::Name.name,
@@ -35,11 +38,13 @@ puts "Creating some more users..."
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
     gender: %w[male female].sample,
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
+    # location: location[counter]
   )
   user.avatar.attach(
     io: File.open(Rails.root.join("app/assets/images/ava#{rand(1..11)}.jpg")),
     filename: 'sock.jpg'
   )
+  # counter += 1
 end
 
 puts "All users have been created. Thanks!"
