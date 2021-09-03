@@ -23,16 +23,17 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from './plugins/init_mapbox';
 import { initTyped } from './plugins/init_typejs';
 import { carousel } from './plugins/carousel';
 import { initSweetalert } from "./plugins/initSweetAlert";
-import { initMapbox } from './plugins/init_mapbox';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initTyped();
   carousel();
-  initSweetalert();
   initMapbox();
+  initSweetalert();
 });
