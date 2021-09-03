@@ -2,7 +2,7 @@
 
   <div class= "d-flex buttomShow">
     <div>
-      <%= link_to :back do %>
+      <%= link_to socks_path do %>
       <p>🧦 Back</p>
       <%end%>
     </div>
@@ -13,7 +13,7 @@
       <%= cl_image_tag(@sock.photo.key, width: 400, height: 400, crop: :fill) %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 sock-booking-form" data-quantity="<%= @sock.quantity %>">
       <h2 class="sock-title-show">Description:</h2>
       <p><%= @sock.description %>
       <h2 class="sock-title-show">Type:</h2>
@@ -21,8 +21,11 @@
       <h2 class="sock-title-show">Price:</h2>
       <div class="d-flex">
         <p><%= @sock.price %> €</p>
-        <%= simple_form_for [@sock, @booking] do |f| %>
-          <%= f.submit 'Buy now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+        <p id="quantity"><%= @sock.quantity %> left</p>
+        <% if policy(@booking).create? %>
+          <%= simple_form_for [@sock, @booking] do |f| %>
+            <%= f.submit 'Buy now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+          <% end %>
         <% end %>
       </div>
 

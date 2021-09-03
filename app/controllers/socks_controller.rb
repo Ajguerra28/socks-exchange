@@ -19,7 +19,7 @@ class SocksController < ApplicationController
 
   def show
     @sock = Sock.find(params[:id])
-    @booking = Booking.new
+    @booking = Booking.new(sock: @sock)
     @sock_quantity = @sock.quantity
     authorize @sock
   end
