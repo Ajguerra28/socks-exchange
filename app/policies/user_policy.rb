@@ -9,4 +9,14 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    owner?
+  end
+
+  private
+
+  def owner?
+    record.user == user
+  end
+
 end
