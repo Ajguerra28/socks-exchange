@@ -12,8 +12,6 @@ class SocksController < ApplicationController
     end
     @markers = @socks.map do |sock|
       {
-        lat: sock.latitude,
-        lng: sock.longitude,
         # infoWindow: render_to_string(partial: "info_window", locals: { sock: sock }),
 
       }
