@@ -21,7 +21,7 @@
       <h2 class="sock-title-show">Price:</h2>
       <div class="d-flex">
         <p><%= @sock.price %> €</p>
-        <p id="quantity"><%= @sock.quantity %> left</p>
+        <p id="quantity"><%= @sock.quantity %> socks left</p>
         <% if policy(@booking).create? %>
           <%= simple_form_for [@sock, @booking] do |f| %>
             <%= f.submit 'Buy now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
