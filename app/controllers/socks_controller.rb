@@ -32,6 +32,7 @@ class SocksController < ApplicationController
   def create
     @sock = Sock.new(sock_params)
     @sock.owner = current_user
+    authorize @sock
     if @sock.save
       redirect_to sock_path(@sock)
     else
