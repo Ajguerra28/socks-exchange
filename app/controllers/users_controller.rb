@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @socks = Sock.where(owner: current_user)
+    authorize @user
   end
 
   def index
-    @users = User.all
+    @users = police_scope(User)
 
    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
