@@ -27,6 +27,7 @@ import "bootstrap";
 import { initTyped } from './plugins/init_typejs';
 import { carousel } from './plugins/carousel';
 import { initSweetalert } from "./plugins/initSweetAlert";
+import { initMapbox } from './plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -34,4 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   initTyped();
   carousel();
   initSweetalert();
+  initMapbox();
 });
