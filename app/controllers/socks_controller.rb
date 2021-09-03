@@ -10,12 +10,6 @@ class SocksController < ApplicationController
     else
       @socks = policy_scope(Sock)
     end
-    @markers = @socks.map do |sock|
-      {
-        # infoWindow: render_to_string(partial: "info_window", locals: { sock: sock }),
-
-      }
-    end
   end
 
   def my_socks
