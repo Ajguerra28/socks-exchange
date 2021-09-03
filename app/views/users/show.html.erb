@@ -1,26 +1,32 @@
-<div>
-  <h1>profile page</h1>
-
-  <div>
-    <p><%= cl_image_tag(@user.avatar.key, width: 200, height: 200, crop: :fill) %></p>
-    <p>Name: <%= @user.name %></p>
-    <p>Location: <%= @user.location %></p>
-    <p>Gender: <%= @user.gender %></p>
-    <p>Date of birth: <%= @user.date_of_birth %></p>
-  </div>
-
-  <h1>Products</h1>
-
-  <div class="card-product">
-    <% @socks.each do |sock| %>
-      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-      <div class="card-product-infos">
-        <p><%= sock.type_of_socks %></p>
-        <p><%= sock.description %></p>
-        <p><%= sock.price%></p>
-        <p><%= sock.color %></p>
-        <p><%= sock.size %></p>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div>
+      <div class="d-flex profile align-items-center">
+        <%= cl_image_tag(@user.avatar.key, width: 200, height: 200, crop: :fill, class: 'profile-picture') %>
+        <h1 class="pl-3"><%= @user.name %></h1>
       </div>
-    <% end %>
+      <div class="profile-info">
+        <p>Location: <%= @user.location %></p>
+        <p>Gender: <%= @user.gender %></p>
+        <p>Date of birth: <%= @user.date_of_birth %></p>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-4">
+    <div>
+      <h1>Products</h1>
+      <div class="card-product">
+        <% @socks.each do |sock| %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h5><%= sock.type_of_socks %></h5>
+            <p><%= sock.description %></p>
+            <p><%= sock.price%></p>
+            <p><%= sock.color %></p>
+            <p><%= sock.size %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
