@@ -8,7 +8,11 @@ class BookingsController < ApplicationController
     @booking.sock = @sock
     @booking.user = current_user
 
+    authorize @booking
+
     if @booking.save
+      @sock.quantity -= 1
+      @sock.save
       redirect_to sock_path(@sock, booked: true)#, notice: 'Great! You just bought an amazing pair of socks!'
     else
       render '/socks/show'

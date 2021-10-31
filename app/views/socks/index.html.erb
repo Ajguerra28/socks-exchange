@@ -1,5 +1,13 @@
 <h1 class="d-flex justify-content-center my-4">List of Socks</h1>
 
+<div class= "d-flex buttomShow">
+    <div>
+      <%= link_to socks_path do %>
+      <p>🧦 Back</p>
+      <%end%>
+    </div>
+  </div>
+
 <div class="row d-flex justify-content-center" >
   <% @socks.each do |sock| %>
     <div class="card-product my-3 mx-5">

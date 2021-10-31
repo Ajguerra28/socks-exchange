@@ -10,12 +10,6 @@ class SocksController < ApplicationController
     else
       @socks = policy_scope(Sock)
     end
-    @markers = @socks.map do |sock|
-      {
-        # infoWindow: render_to_string(partial: "info_window", locals: { sock: sock }),
-
-      }
-    end
   end
 
   def my_socks
@@ -25,7 +19,7 @@ class SocksController < ApplicationController
 
   def show
     @sock = Sock.find(params[:id])
-    @booking = Booking.new
+    @booking = Booking.new(sock: @sock)
     @sock_quantity = @sock.quantity
     authorize @sock
   end
@@ -40,7 +34,7 @@ class SocksController < ApplicationController
     @sock.owner = current_user
     authorize @sock
     if @sock.save
-      redirect_to sock_path(@sock)
+      redirect_to user_path(@sock.owner)
     else
       render :new
     end
@@ -49,6 +43,6 @@ class SocksController < ApplicationController
   private
 
   def sock_params
-    params.require(:sock).permit(:description, :type_of_socks, :price, :size, :color, :photo)
+    params.require(:sock).permit(:description, :type_of_socks, :price, :size, :color, :photo, :quantity)
   end
 end
