@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 4767edc5a11215ff2c023b582d1cb14ffe4e276b
+  revision: e32f096bb03c8a41f9f6f80f75328585fbfe0b0e
   branch: master
   specs:
     faker (2.19.0)
@@ -108,7 +108,7 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
-    ffi (1.15.3)
+    ffi (1.15.4)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     geocoder (1.6.7)
@@ -133,13 +133,13 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0704)
+    mime-types-data (3.2021.0901)
     mini_mime (1.1.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-linux)
+    nokogiri (1.12.4-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -267,7 +267,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -282,7 +281,6 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  nokogiri
   pg (~> 1.1)
   pg_search (~> 2.3.0)
   pry-byebug
